@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Configuration;
 
 namespace DataBaseLayerLib
 {
 	/// <summary>
 	/// Connections layer.
 	/// </summary>
-	abstract class DBAbstractFactory : IDBFactory
+	public class DBAbstractFactory : IDBFactory
 	{
 		#region Fields
 
@@ -23,9 +24,10 @@ namespace DataBaseLayerLib
 
 		#region Methods
 
-		public void GetConnectionString()
+		public string GetConnectionString()
 		{
-			
+			return "G";
+				//ConfigurationManager.ConnectionStrings["SalesAndForecasting"].ConnectionString;
 		}
 		#endregion
 	}
