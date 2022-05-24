@@ -22,14 +22,13 @@ namespace DataBaseLayerLib
 		#endregion
 
 		#region Methods
-
-		public string GetConnectionString()
+		/// <summary>
+		/// Get DataBase connection string from app.config.
+		/// </summary>
+		private void GetConnectionString()
 		{
 			connectionString = ConfigurationManager
-				.AppSettings
-				.Get("connectionString");
-
-			return connectionString;
+				.AppSettings["connectionString"];
 		}
 		#endregion
 	}
