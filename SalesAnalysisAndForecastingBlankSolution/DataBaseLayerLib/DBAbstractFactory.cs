@@ -1,5 +1,4 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 
 namespace DataBaseLayerLib
 {
@@ -26,8 +25,11 @@ namespace DataBaseLayerLib
 
 		public string GetConnectionString()
 		{
-			return "G";
-				//ConfigurationManager.ConnectionStrings["SalesAndForecasting"].ConnectionString;
+			connectionString = ConfigurationManager
+				.AppSettings
+				.Get("connectionString");
+
+			return connectionString;
 		}
 		#endregion
 	}

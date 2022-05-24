@@ -16,15 +16,15 @@ namespace DataBaseLayerLib.Tests
 		{
 			var dBFactory = new DBAbstractFactory();
 
-			var connectionStringReturned = dBFactory.GetConnectionString();
+			var actualConnectionString = dBFactory.GetConnectionString();
 
-			var expectedConnectionString = @"Server=LAPTOP-D01LT47H\SQLEXPRESS01;" +
-				$"Database=SalesAnalyseAndForecast;" +
-				$"Trusted_Connection=True;" +
-				$"MultipleActiveResultSets=true";
+			var expectedConnectionString = 
+				@"Server=LAPTOP-D01LT47H\SQLEXPRESS01;Database=SalesAnalyseAndForecast;Trusted_Connection=True;MultipleActiveResultSets=true";
 
-			Assert.AreEqual(connectionStringReturned, expectedConnectionString);
-
+			Assert.AreEqual(expectedConnectionString,
+				actualConnectionString,
+				false,
+				"Comparsion resault: not equal.");
 		}
 	}
 }
