@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics;
 using WebAPIService.Models;
 
@@ -22,6 +23,15 @@ namespace WebAPIService.Controllers
 		public IActionResult Privacy()
 		{
 			return View();
+		}
+
+		/// <summary>
+		/// User domain API.
+		/// </summary>
+		/// <returns></returns>
+		public string GetUserDomain()
+		{
+			return Environment.UserDomainName;
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
