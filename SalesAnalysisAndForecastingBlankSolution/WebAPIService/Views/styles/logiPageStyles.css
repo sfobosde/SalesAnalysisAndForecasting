@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+}
+
+.header{
+    background-image: url('img/loginpageBackground.jpg');
+}
+
+.nav__list{
+	padding-top:20px ;
+	padding-bottom: 20px;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.nav__list__item{
+    background-color: #D9D9D9;
+    mix-blend-mode: multiply;
+	color: #ffffff;
+	font-family: 'Fredoka', sans-serif;
+	font-size: 36px;
+	padding: 22px 90px;
+	border-radius: 30px;
+	text-decoration: none;
+}
+
+.nav__list__item:hover{
+	background-color: #8b8b8b;
+	color: rgb(255, 255, 255);
+}
