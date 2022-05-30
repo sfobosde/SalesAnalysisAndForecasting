@@ -47,10 +47,20 @@ namespace WebAPIService
 			else
 			{
 				app.UseExceptionHandler("/Home/Error");
-				// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 				app.UseHsts();
 			}
+
+			/// To change default file names.
+			//DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+			//defaultFilesOptions.DefaultFileNames.Clear();
+			//defaultFilesOptions.DefaultFileNames.Add("Filename.html");
+			//app.UseDefaultFiles(defaultFilesOptions);
+
+			/// To Use default files as index.html.
+			app.UseDefaultFiles();
+
 			app.UseHttpsRedirection();
+
 			app.UseStaticFiles();
 
 			app.UseRouting();
