@@ -9,8 +9,9 @@ var loginButton = document.getElementById("LoginButton");
     document.getElementById("login").readOnly = true;
 }());
 
+/// Login click event handler.
 loginButton.onclick = function() {
-
+    
 }
 
 /// Get User domain with api.
