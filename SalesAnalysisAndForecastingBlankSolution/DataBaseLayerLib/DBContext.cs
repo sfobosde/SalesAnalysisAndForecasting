@@ -1,8 +1,5 @@
-﻿using LinqToDB.Data;
-using LinqToDB.Configuration;
-using LinqToDB;
+﻿using LinqToDB.Configuration;
 using DataBaseLayerLib.Entities.AAFS_Entities;
-using System;
 using System.Collections.Generic;
 
 namespace DataBaseLayerLib
@@ -10,20 +7,17 @@ namespace DataBaseLayerLib
 	/// <summary>
 	/// Connections layer.
 	/// </summary>
-	public class DBContext : DataConnection, IDBFactory
+	public class DBContext : DBFactory
 	{
-		#region Tables
-		public ITable<Product> Products => this.GetTable<Product>();
-		#endregion
-
 		#region Querries
-		public IEnumerable<Product> GetProductList()
+		/// <summary>
+		/// Get products List querry.
+		/// </summary>
+		/// <returns></returns>
+		public override IEnumerable<Product> GetProductList()
 		{
 			return Products;
 		}
-		#endregion
-
-		#region Properties
 		#endregion
 
 		#region Fields
@@ -37,12 +31,8 @@ namespace DataBaseLayerLib
 		public DBContext(LinqToDBConnectionOptions<DBContext> options)
 			: base(options)
 		{
-
+			
 		}
-		#endregion
-
-		#region Methods
-
 		#endregion
 	}
 }

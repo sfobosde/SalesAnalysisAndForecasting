@@ -7,8 +7,6 @@ using LinqToDB.AspNet;
 using LinqToDB.Configuration;
 using DataBaseLayerLib;
 using LinqToDB.AspNet.Logging;
-using LinqToDB;
-using DataBaseLayerLib.Entities.AAFS_Entities;
 
 namespace WebAPIService
 {
@@ -31,7 +29,7 @@ namespace WebAPIService
 
 			services.AddLinqToDBContext<DBContext>((provider, options) => {
 				options
-				.UseSQLite(Configuration.GetConnectionString("Default"))
+				.UseSqlServer(Configuration.GetConnectionString("Default"))
 				.UseDefaultLogging(provider);
 			});
 		}
@@ -76,11 +74,10 @@ namespace WebAPIService
 					pattern: "{controller=Home}/{action=Index}/{id?}");
 			});
 
-			//using (var scope = app.ApplicationServices.CreateScope())
-			//{
-			//	var dbContext = scope.ServiceProvider.GetService<DBContext>();
-			//	//dbContext.CreateTable<Product>();
-			//}
+			using (var scope = app.ApplicationServices.CreateScope())
+			{
+				var dbContext = scope.ServiceProvider.GetService<DBContext>();
+			}
 		}
 	}
 }

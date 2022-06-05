@@ -1,5 +1,4 @@
-﻿using System;
-using LinqToDB.Mapping;
+﻿using LinqToDB.Mapping;
 
 namespace DataBaseLayerLib.Entities.AAFS_Entities
 {
@@ -12,8 +11,8 @@ namespace DataBaseLayerLib.Entities.AAFS_Entities
 		/// <summary>
 		/// Uniqueidentifier key for table.
 		/// </summary>
-		[PrimaryKey, Identity]
-		public Guid productId;
+		[Column]
+		public string productId;
 
 		/// <summary>
 		/// Varchar() product name.
