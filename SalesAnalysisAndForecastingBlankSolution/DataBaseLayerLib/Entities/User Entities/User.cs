@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace DataBaseLayerLib.Entities.User_Entities
 {
@@ -22,10 +23,12 @@ namespace DataBaseLayerLib.Entities.User_Entities
 		/// </summary>
 		public string UserName { get; set; }
 
+
 		/// <summary>
 		/// User password.
 		/// Change type.
 		/// </summary>
+		[JsonIgnore]
 		public string UserPassword { get; set; }
 	}
 }
