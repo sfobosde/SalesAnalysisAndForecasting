@@ -29,7 +29,7 @@ namespace WebAPIService
 
 			services.AddLinqToDBContext<DBContext>((provider, options) => {
 				options
-				.UseSQLite(Configuration.GetConnectionString("Default"))
+				.UseSqlServer(Configuration.GetConnectionString("Default"))
 				.UseDefaultLogging(provider);
 			});
 		}
@@ -73,6 +73,11 @@ namespace WebAPIService
 					name: "default",
 					pattern: "{controller=Home}/{action=Index}/{id?}");
 			});
+
+			using (var scope = app.ApplicationServices.CreateScope())
+			{
+				var dbContext = scope.ServiceProvider.GetService<DBContext>();
+			}
 		}
 	}
 }
