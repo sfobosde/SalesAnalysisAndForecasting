@@ -7,6 +7,9 @@ using LinqToDB.AspNet;
 using LinqToDB.Configuration;
 using DataBaseLayerLib;
 using LinqToDB.AspNet.Logging;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using JWTAuthorizationLib;
 
 namespace WebAPIService
 {
@@ -25,6 +28,26 @@ namespace WebAPIService
 		
 		public void ConfigureServices(IServiceCollection services)
 		{
+			/// Configure Authorization.
+			services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+				.AddJwtBearer(options =>
+				{
+					options.RequireHttpsMetadata = false;
+					options.TokenValidationParameters = new TokenValidationParameters
+					{
+						ValidateIssuer = true,
+						ValidIssuer = AuthOptions.ISSUER,
+
+						ValidateAudience = true,
+						ValidAudience = AuthOptions.AUDIENCE,
+
+						ValidateLifetime = true,
+
+						IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+						ValidateIssuerSigningKey = true,
+					};
+				});
+
 			services.AddControllersWithViews();
 
 			services.AddLinqToDBContext<DBContext>((provider, options) => {
@@ -65,6 +88,7 @@ namespace WebAPIService
 
 			app.UseRouting();
 
+			app.UseAuthentication();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>

@@ -7,7 +7,7 @@ namespace JWTAuthorizationLib
     /// <summary>
     /// Authorization options.
     /// </summary>
-	class AuthOptions
+	public class AuthOptions
 	{
         /// <summary>
         /// Token publisher.
