@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Diagnostics;
+using System.Text.Json.Serialization;
 using WebAPIService.Models;
+using System.Text.Json;
 
 namespace WebAPIService.Controllers
 {
@@ -17,13 +19,20 @@ namespace WebAPIService.Controllers
 		{
 			return Environment.UserDomainName;
 		}
+
+		public string ProductList()
+		{
+			/// Use it as example to get values.
+			var productList = _dbContext.GetProductList();
+			return JsonSerializer.Serialize(productList.ToArray()[0].productName);
+		}
 		#endregion
 
 		#region Fields
 		/// <summary>
 		/// DB connection layer;
 		/// </summary>
-		private IDBFactory _dbContext;
+		private IDBContext _dbContext;
 		#endregion
 
 		#region Constructions

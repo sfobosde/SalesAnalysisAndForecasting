@@ -6,14 +6,14 @@ using System.Collections.Generic;
 
 namespace DataBaseLayerLib
 {
-	public abstract class DBFactory : DataConnection, IDBFactory
+	public abstract class DBFactory : DataConnection, IDBContext
 	{
 		#region Interface Querries
 		/// <summary>
 		/// Get Proguct list.
 		/// </summary>
 		/// <returns></returns>
-		public abstract IEnumerable<Product> GetProductList();
+		public abstract List<Product> GetProductList();
 		#endregion
 
 		#region Tables
