@@ -6,12 +6,12 @@ namespace DataBaseLayerLib
 	/// <summary>
 	/// Mask layer to db.
 	/// </summary>
-	public interface IDBFactory
+	public interface IDBContext
 	{
 		/// <summary>
 		/// Get Products List.
 		/// </summary>
 		/// <returns></returns>
-		IEnumerable<Product> GetProductList();
+		List<Product> GetProductList();
 	}
 }

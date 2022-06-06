@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseLayerLib", "DataBas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIService", "WebAPIService\WebAPIService.csproj", "{BBB5466D-B512-447A-9B02-1121956C57DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseLayerLibTests", "DataBaseLayerLibTests\DataBaseLayerLibTests.csproj", "{F6C2BB99-7047-4961-B642-96BB8F6A1581}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseLayerLibTests", "DataBaseLayerLibTests\DataBaseLayerLibTests.csproj", "{F6C2BB99-7047-4961-B642-96BB8F6A1581}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

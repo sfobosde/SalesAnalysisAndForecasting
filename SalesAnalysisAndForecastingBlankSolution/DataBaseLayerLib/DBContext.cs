@@ -1,6 +1,8 @@
 ﻿using LinqToDB.Configuration;
 using DataBaseLayerLib.Entities.AAFS_Entities;
 using System.Collections.Generic;
+using System.Linq;
+using System;
 
 namespace DataBaseLayerLib
 {
@@ -14,9 +16,12 @@ namespace DataBaseLayerLib
 		/// Get products List querry.
 		/// </summary>
 		/// <returns></returns>
-		public override IEnumerable<Product> GetProductList()
+		public override List<Product> GetProductList()
 		{
-			return Products;
+			var querry = from product in Products
+						 select product;
+
+			return querry.ToList();
 		}
 		#endregion
 
