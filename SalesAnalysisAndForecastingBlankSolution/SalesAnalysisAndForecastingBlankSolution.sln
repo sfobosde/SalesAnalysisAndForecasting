@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseLayerLib", "DataBas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIService", "WebAPIService\WebAPIService.csproj", "{BBB5466D-B512-447A-9B02-1121956C57DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseLayerLibTests", "DataBaseLayerLibTests\DataBaseLayerLibTests.csproj", "{F6C2BB99-7047-4961-B642-96BB8F6A1581}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{BBB5466D-B512-447A-9B02-1121956C57DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBB5466D-B512-447A-9B02-1121956C57DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBB5466D-B512-447A-9B02-1121956C57DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6C2BB99-7047-4961-B642-96BB8F6A1581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6C2BB99-7047-4961-B642-96BB8F6A1581}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6C2BB99-7047-4961-B642-96BB8F6A1581}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6C2BB99-7047-4961-B642-96BB8F6A1581}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
