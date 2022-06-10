@@ -26,7 +26,15 @@
 
   }
   .mainmenubutton {
-	position:fixed;
 	background-image: url("img/MainMenuButton.png");
+	background-repeat: no-repeat;
+  }
+
+  .graphicsButton {
+	background-image: url("img/GraphicsGutton.png");
+	background-repeat: no-repeat;
+  }
+  .graphicsButton:hover {
+	background-image: url("img/GraphicsButtonHover.png");
 	background-repeat: no-repeat;
   }
