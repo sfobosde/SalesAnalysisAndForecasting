@@ -38,3 +38,11 @@
 	background-image: url("img/GraphicsButtonHover.png");
 	background-repeat: no-repeat;
   }
+.productsButton {
+	background-image: url("img/ProductsButton.png");
+	background-repeat: no-repeat;
+}
+.productsButton:hover {
+	background-image: url("img/ProductsButtonHover.png");
+	background-repeat: no-repeat;
+}
