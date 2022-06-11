@@ -5,7 +5,7 @@
 .sidenav {
 	height: 100%;
 	width: 80;
-	position: fixed;
+	position: absolute;
 	z-index: 1;
 	top: 0; 
 	left: 0;
@@ -17,8 +17,8 @@
   /* The navigation menu links */
   .sidenav a {
 	margin: 10px;
-	width: 120px;
-	height: 120px;
+	width: 80px;
+	height: 80px;
 	text-decoration: none;
 	color: #818181;
 	display: block;
@@ -28,21 +28,49 @@
   .mainmenubutton {
 	background-image: url("img/MainMenuButton.png");
 	background-repeat: no-repeat;
+	background-size: cover;
   }
 
   .graphicsButton {
 	background-image: url("img/GraphicsGutton.png");
 	background-repeat: no-repeat;
+	background-size: cover;
   }
   .graphicsButton:hover {
 	background-image: url("img/GraphicsButtonHover.png");
 	background-repeat: no-repeat;
+	background-size: cover;
   }
 .productsButton {
 	background-image: url("img/ProductsButton.png");
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 .productsButton:hover {
 	background-image: url("img/ProductsButtonHover.png");
 	background-repeat: no-repeat;
+	background-size: cover;
+}
+.mainFrame {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.headerLine {
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	left: 100px;
+	top: 0px;
+	background-color: #FFBA93;
+}
+.headerLine__text{
+    color: rgb(0, 0, 0);
+	font-size: 40px;
+	font-family: 'Fredoka', sans-serif;
+	text-align:center;
+}
+.mainFrame_background {
+	background-image: url("img/MainMenuBackgroundImage.jpg");
+	height: 100%;
 }
