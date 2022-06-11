@@ -57,6 +57,18 @@ namespace DataBaseLayerLib
 
 			return weatherData.ToList();
 		}
+
+		/// <summary>
+		/// Get Policy changes.
+		/// </summary>
+		/// <returns></returns>
+		public override List<PolicyChanges> GetPolicyChanges()
+		{
+			var policyChanges = from policyChange in PolicyChanges
+								select policyChange;
+
+			return policyChanges.ToList();
+		}
 		#endregion
 
 		#region Fields

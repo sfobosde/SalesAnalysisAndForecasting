@@ -28,6 +28,12 @@ namespace DataBaseLayerLib
 		/// </summary>
 		/// <returns></returns>
 		public abstract List<WeatherData> GetWeatherData();
+
+		/// <summary>
+		/// Get Policy changes.
+		/// </summary>
+		/// <returns></returns>
+		public abstract List<PolicyChanges> GetPolicyChanges();
 		#endregion
 
 		#region Tables
@@ -40,6 +46,11 @@ namespace DataBaseLayerLib
 		/// Weather data table.
 		/// </summary>
 		protected ITable<WeatherData> WeatherData => this.GetTable<WeatherData>();
+
+		/// <summary>
+		/// Ploicy changes Table.
+		/// </summary>
+		protected ITable<PolicyChanges> PolicyChanges => this.GetTable<PolicyChanges>();
 
 		/// <summary>
 		/// Product sales tables dictionary with productId key.

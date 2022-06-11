@@ -61,6 +61,7 @@ namespace WebAPIService.Controllers
 			/// Get weather data.
 			var weatherData = _dbContext.GetWeatherData();
 			/// Get policy changes data.
+			var policyChanges = _dbContext.GetPolicyChanges();
 			/// Get external factors data.
 			/// Create eventargs.
 			/// Start Event.

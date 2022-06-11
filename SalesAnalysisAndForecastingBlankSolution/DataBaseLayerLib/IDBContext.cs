@@ -26,5 +26,11 @@ namespace DataBaseLayerLib
 		/// <param name="productId"></param>
 		/// <returns></returns>
 		List<WeatherData> GetWeatherData();
+
+		/// <summary>
+		/// Get Policy changes.
+		/// </summary>
+		/// <returns></returns>
+		List<PolicyChanges> GetPolicyChanges();
 	}
 }
