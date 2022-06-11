@@ -2,7 +2,8 @@
 
 namespace CalculationLib.Interfaces
 {
-	interface ICalculationModel
+	public interface ICalculationModel
 	{
+		void CalculateWeeklyDependecys();
 	}
 }

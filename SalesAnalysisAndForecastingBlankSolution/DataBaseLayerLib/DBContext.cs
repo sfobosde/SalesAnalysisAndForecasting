@@ -23,6 +23,20 @@ namespace DataBaseLayerLib
 
 			return querry.ToList();
 		}
+
+		/// <summary>
+		/// Get product sales.
+		/// </summary>
+		/// <returns></returns>
+		public override List<ProductSales> GetProductSales(string productId)
+		{
+			var productSalesTable = GetProductSalesTable(productId);
+
+			var productSales = from productSale in productSalesTable
+							   select productSale;
+
+			return productSales.ToList();
+		}
 		#endregion
 
 		#region Fields

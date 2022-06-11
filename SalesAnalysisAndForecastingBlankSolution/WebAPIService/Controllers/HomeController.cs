@@ -20,11 +20,25 @@ namespace WebAPIService.Controllers
 			return Environment.UserDomainName;
 		}
 
+		/// <summary>
+		/// Get Product List.
+		/// </summary>
+		/// <returns></returns>
 		public string ProductList()
 		{
 			/// Use it as example to get values.
 			var productList = _dbContext.GetProductList();
-			return JsonSerializer.Serialize(productList.ToArray()[0].productName);
+			return JsonSerializer.Serialize(productList.ToArray()[0].salesDataTableName);
+		}
+
+		/// <summary>
+		/// Get product sales history by product id.
+		/// </summary>
+		/// <returns></returns>
+		public string GetProductSalesByProductId(string productId)
+		{
+			var productSales = _dbContext.GetProductSales("D3BD999C-43C8-4E4A-B5BF-4846989D1552");
+			return JsonSerializer.Serialize(productSales.ToArray()[0].saleId);
 		}
 		#endregion
 

@@ -13,5 +13,11 @@ namespace DataBaseLayerLib
 		/// </summary>
 		/// <returns></returns>
 		List<Product> GetProductList();
+
+		/// <summary>
+		/// Get product sales.
+		/// </summary>
+		/// <returns></returns>
+		List<ProductSales> GetProductSales(string productId);
 	}
 }
