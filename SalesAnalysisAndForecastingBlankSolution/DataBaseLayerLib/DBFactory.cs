@@ -34,6 +34,12 @@ namespace DataBaseLayerLib
 		/// </summary>
 		/// <returns></returns>
 		public abstract List<PolicyChanges> GetPolicyChanges();
+
+		/// <summary>
+		/// Get external factors.
+		/// </summary>
+		/// <returns></returns>
+		public abstract List<ExternalFactors> GetExternalFactors();
 		#endregion
 
 		#region Tables
@@ -51,6 +57,11 @@ namespace DataBaseLayerLib
 		/// Ploicy changes Table.
 		/// </summary>
 		protected ITable<PolicyChanges> PolicyChanges => this.GetTable<PolicyChanges>();
+
+		/// <summary>
+		/// External factors table.
+		/// </summary>
+		protected ITable<ExternalFactors> ExternalFactors => this.GetTable<ExternalFactors>();
 
 		/// <summary>
 		/// Product sales tables dictionary with productId key.

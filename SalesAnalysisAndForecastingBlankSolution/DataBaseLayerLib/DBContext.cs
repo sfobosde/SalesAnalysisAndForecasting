@@ -69,6 +69,18 @@ namespace DataBaseLayerLib
 
 			return policyChanges.ToList();
 		}
+
+		/// <summary>
+		/// Get external factors.
+		/// </summary>
+		/// <returns></returns>
+		public override List<ExternalFactors> GetExternalFactors()
+		{
+			var externalFactors = from externalFactor in ExternalFactors
+								  select externalFactor;
+
+			return externalFactors.ToList();
+		}
 		#endregion
 
 		#region Fields

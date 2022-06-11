@@ -63,6 +63,7 @@ namespace WebAPIService.Controllers
 			/// Get policy changes data.
 			var policyChanges = _dbContext.GetPolicyChanges();
 			/// Get external factors data.
+			var externalFactors = _dbContext.GetExternalFactors();
 			/// Create eventargs.
 			/// Start Event.
 		}

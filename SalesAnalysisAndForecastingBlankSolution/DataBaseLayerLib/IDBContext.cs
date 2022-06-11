@@ -32,5 +32,11 @@ namespace DataBaseLayerLib
 		/// </summary>
 		/// <returns></returns>
 		List<PolicyChanges> GetPolicyChanges();
+
+		/// <summary>
+		/// Get external factors.
+		/// </summary>
+		/// <returns></returns>
+		List<ExternalFactors> GetExternalFactors();
 	}
 }
