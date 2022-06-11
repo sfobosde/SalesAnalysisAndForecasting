@@ -59,6 +59,7 @@ namespace WebAPIService.Controllers
 			/// Get dayly sales.
 			var productSales = _dbContext.GetProductSales(productId);
 			/// Get weather data.
+			var weatherData = _dbContext.GetWeatherData();
 			/// Get policy changes data.
 			/// Get external factors data.
 			/// Create eventargs.

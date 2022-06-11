@@ -22,6 +22,12 @@ namespace DataBaseLayerLib
 		/// </summary>
 		/// <returns></returns>
 		public abstract List<ProductSales> GetProductSales(string productId);
+
+		/// <summary>
+		/// Get weather data.
+		/// </summary>
+		/// <returns></returns>
+		public abstract List<WeatherData> GetWeatherData();
 		#endregion
 
 		#region Tables
@@ -29,6 +35,11 @@ namespace DataBaseLayerLib
 		/// Product catalog table.
 		/// </summary>
 		protected ITable<Product> Products => this.GetTable<Product>();
+
+		/// <summary>
+		/// Weather data table.
+		/// </summary>
+		protected ITable<WeatherData> WeatherData => this.GetTable<WeatherData>();
 
 		/// <summary>
 		/// Product sales tables dictionary with productId key.
@@ -70,6 +81,8 @@ namespace DataBaseLayerLib
 			}
 		}
 		#endregion
+
+		#region Constructor
 		/// <summary>
 		/// Delegate connection properties to base (linq2db) object.
 		/// Creating tables.
@@ -80,5 +93,7 @@ namespace DataBaseLayerLib
 		{
 			ProductSales = new Dictionary<string, ITable<ProductSales>>();
 		}
+		#endregion
+		
 	}
 }

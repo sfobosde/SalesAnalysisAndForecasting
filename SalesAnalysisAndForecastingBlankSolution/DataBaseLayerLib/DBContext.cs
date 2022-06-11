@@ -45,6 +45,18 @@ namespace DataBaseLayerLib
 				throw new Exception("No sales data", e);
 			}
 		}
+
+		/// <summary>
+		/// Get weather data.
+		/// </summary>
+		/// <returns></returns>
+		public override List<WeatherData> GetWeatherData()
+		{
+			var weatherData = from weatherDate in WeatherData
+							  select weatherDate;
+
+			return weatherData.ToList();
+		}
 		#endregion
 
 		#region Fields
