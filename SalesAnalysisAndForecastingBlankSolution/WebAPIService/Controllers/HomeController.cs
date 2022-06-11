@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using WebAPIService.Models;
 using Newtonsoft.Json;
+using CalculationLib.Interfaces;
 
 namespace WebAPIService.Controllers
 {
@@ -55,6 +56,11 @@ namespace WebAPIService.Controllers
 		/// DB connection layer;
 		/// </summary>
 		private IDBContext _dbContext;
+
+		/// <summary>
+		/// Calculation and mathematics model;
+		/// </summary>
+		private ICalculationModel _calculationModel;
 		#endregion
 
 		#region Constructions
