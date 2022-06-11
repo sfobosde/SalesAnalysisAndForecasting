@@ -2,9 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Diagnostics;
-using System.Text.Json.Serialization;
 using WebAPIService.Models;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace WebAPIService.Controllers
 {
@@ -20,11 +19,34 @@ namespace WebAPIService.Controllers
 			return Environment.UserDomainName;
 		}
 
+		/// <summary>
+		/// Get Product List.
+		/// </summary>
+		/// <returns></returns>
 		public string ProductList()
 		{
 			/// Use it as example to get values.
 			var productList = _dbContext.GetProductList();
-			return JsonSerializer.Serialize(productList.ToArray()[0].productName);
+			return JsonConvert.SerializeObject(productList.ToArray()[0].salesDataTableName);
+		} 
+
+		/// <summary>
+		/// Get product sales history by product id.
+		/// </summary>
+		/// <returns></returns>
+		public string GetProductSalesByProductId(string productId)
+		{
+			/// test guid: D3BD999C-43C8-4E4A-B5BF-4846989D1552.
+			try
+			{
+				var productSales = _dbContext.GetProductSales(productId);
+				return JsonConvert.SerializeObject(productSales);
+			}
+			/// Take all exceptions.
+			catch (Exception e)
+			{
+				return JsonConvert.SerializeObject(e);
+			}
 		}
 		#endregion
 
