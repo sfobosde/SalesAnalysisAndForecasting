@@ -49,6 +49,21 @@ namespace WebAPIService.Controllers
 				return JsonConvert.SerializeObject(e);
 			}
 		}
+
+		/// <summary>
+		/// Start calculate dependencys for product with id = productId.
+		/// </summary>
+		/// <param name="productId"></param>
+		public void CalculateDependencys(string productId)
+		{
+			/// Get dayly sales.
+			var productSales = _dbContext.GetProductSales(productId);
+			/// Get weather data.
+			/// Get policy changes data.
+			/// Get external factors data.
+			/// Create eventargs.
+			/// Start Event.
+		}
 		#endregion
 
 		#region Fields
