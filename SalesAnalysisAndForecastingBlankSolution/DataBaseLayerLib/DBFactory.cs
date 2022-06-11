@@ -2,6 +2,7 @@
 using LinqToDB;
 using LinqToDB.Configuration;
 using LinqToDB.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,7 +28,12 @@ namespace DataBaseLayerLib
 		/// <summary>
 		/// Product catalog table.
 		/// </summary>
-		public ITable<Product> Products => this.GetTable<Product>();
+		protected ITable<Product> Products => this.GetTable<Product>();
+
+		/// <summary>
+		/// Product sales tables dictionary with productId key.
+		/// </summary>
+		private Dictionary<string, ITable<ProductSales>> ProductSales;
 		#endregion
 
 		#region Methods
@@ -36,15 +42,32 @@ namespace DataBaseLayerLib
 		/// </summary>
 		protected ITable<ProductSales> GetProductSalesTable(string productId)
 		{
-			var productSalesTableName = from product in Products
-										where product.productId.Equals(productId)
-										select product.salesDataTableName;
+			try
+			{
+				var productSales = ProductSales.FirstOrDefault(productSales =>
+				productSales.Key.Equals(productId)).Value;
 
-			return this
-				.GetTable<ProductSales>()
-				.TableName(
-				productSalesTableName
-				.FirstOrDefault());
+				if (productSales == null)
+				{
+					var productSalesTableName = from product in Products
+												where product.productId.Equals(productId)
+												select product.salesDataTableName;
+
+					var sales = this.GetTable<ProductSales>()
+							.TableName(productSalesTableName
+							.FirstOrDefault());
+
+					ProductSales.Add(productId, sales);
+
+					return sales;
+				}
+				return productSales;
+			}
+			/// If guid was not in table.
+			catch (ArgumentNullException e)
+			{
+				throw new ArgumentNullException("Cannot load data.", e);
+			}
 		}
 		#endregion
 		/// <summary>
@@ -55,7 +78,7 @@ namespace DataBaseLayerLib
 		public DBFactory(LinqToDBConnectionOptions<DBContext> options)
 			: base(options)
 		{
-			
+			ProductSales = new Dictionary<string, ITable<ProductSales>>();
 		}
 	}
 }

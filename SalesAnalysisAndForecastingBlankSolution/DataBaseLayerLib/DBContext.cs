@@ -30,12 +30,20 @@ namespace DataBaseLayerLib
 		/// <returns></returns>
 		public override List<ProductSales> GetProductSales(string productId)
 		{
-			var productSalesTable = GetProductSalesTable(productId);
+			try
+			{
+				var productSalesTable = GetProductSalesTable(productId);
 
-			var productSales = from productSale in productSalesTable
-							   select productSale;
+				var productSales = from productSale in productSalesTable
+								   select productSale;
 
-			return productSales.ToList();
+				return productSales.ToList();
+			}
+			/// Cannot find sales table.
+			catch (Microsoft.Data.SqlClient.SqlException e)
+			{
+				throw new Exception("No sales data", e);
+			}
 		}
 		#endregion
 
