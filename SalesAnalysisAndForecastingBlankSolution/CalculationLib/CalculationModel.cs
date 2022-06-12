@@ -1,6 +1,5 @@
 ﻿using CalculationLib.Interfaces;
 using DataBaseLayerLib.Entities.AAFS_Entities;
-using System;
 using System.Collections.Generic;
 
 namespace CalculationLib
@@ -18,6 +17,7 @@ namespace CalculationLib
 			/// Mark diferents as weather infulence;
 			/// Find AVG.
 			/// Send to save in db.
+			
 		}
 	}
 }
