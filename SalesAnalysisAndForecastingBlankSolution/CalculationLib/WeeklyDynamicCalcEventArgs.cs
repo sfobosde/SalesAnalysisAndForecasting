@@ -4,31 +4,31 @@ using System.Collections.Generic;
 
 namespace CalculationLib
 {
-	class WeeklyDynamicCalcEventArgs : EventArgs
+	public class WeeklyDynamicCalcEventArgs : EventArgs
 	{
 		/// <summary>
 		/// Product id.
 		/// </summary>
-		private string productId;
+		public string ProductId;
 
 		/// <summary>
 		/// Sales history.
 		/// </summary>
-		private	List<ProductSales> productSales;
+		public List<ProductSales> ProductSales;
 
 		/// <summary>
 		/// Weather data.
 		/// </summary>
-		private List<WeatherData> weatherData;
+		public List<WeatherData> WeatherData;
 
 		/// <summary>
 		/// Policy chages data.
 		/// </summary>
-		private List<PolicyChanges> PolicyChanges;
+		public List<PolicyChanges> PolicyChanges;
 
 		/// <summary>
 		/// External factors.
 		/// </summary>
-		private List<ExternalFactors> ExternalFactors;
+		public List<ExternalFactors> ExternalFactors;
 	}
 }

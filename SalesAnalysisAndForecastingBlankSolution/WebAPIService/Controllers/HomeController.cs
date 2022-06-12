@@ -5,6 +5,7 @@ using System.Diagnostics;
 using WebAPIService.Models;
 using Newtonsoft.Json;
 using CalculationLib.Interfaces;
+using CalculationLib;
 
 namespace WebAPIService.Controllers
 {
@@ -56,16 +57,21 @@ namespace WebAPIService.Controllers
 		/// <param name="productId"></param>
 		public void CalculateDependencys(string productId)
 		{
-			/// Get dayly sales.
 			var productSales = _dbContext.GetProductSales(productId);
-			/// Get weather data.
 			var weatherData = _dbContext.GetWeatherData();
-			/// Get policy changes data.
 			var policyChanges = _dbContext.GetPolicyChanges();
-			/// Get external factors data.
 			var externalFactors = _dbContext.GetExternalFactors();
-			/// Create eventargs.
-			/// Start Event.
+
+			var eventArgs = new WeeklyDynamicCalcEventArgs()
+			{
+				ProductId = productId,
+				ProductSales = productSales,
+				WeatherData = weatherData,
+				PolicyChanges = policyChanges,
+				ExternalFactors = externalFactors
+			};
+
+			CalculatingDependencys?.Invoke(this, eventArgs);
 		}
 		#endregion
 
@@ -81,6 +87,13 @@ namespace WebAPIService.Controllers
 		private ICalculationModel _calculationModel;
 		#endregion
 
+		#region Events
+		/// <summary>
+		/// To start calculations;
+		/// </summary>
+		private EventHandler<WeeklyDynamicCalcEventArgs> CalculatingDependencys;
+		#endregion
+
 		#region Constructions
 
 		/// <summary>
@@ -90,6 +103,8 @@ namespace WebAPIService.Controllers
 		public HomeController(DBContext dbContext)
 		{
 			_dbContext = dbContext;
+
+			CalculatingDependencys += _calculationModel.CalculateWeeklyDependecys;
 		}
 		#endregion
 

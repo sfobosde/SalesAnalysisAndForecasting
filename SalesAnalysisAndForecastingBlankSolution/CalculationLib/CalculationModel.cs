@@ -7,7 +7,7 @@ namespace CalculationLib
 {
 	class CalculationModel : ICalculationModel
 	{
-		public void CalculateWeeklyDependecys(List<ProductSales> productSales)
+		public void CalculateWeeklyDependecys(object sender, WeeklyDynamicCalcEventArgs eventArgs)
 		{
 			/// Find action free periods.
 			/// Divide on week periods.

@@ -9,6 +9,6 @@ namespace CalculationLib.Interfaces
 		/// Calculate weekly dynamics.
 		/// </summary>
 		/// <param name="productSales"></param>
-		void CalculateWeeklyDependecys(List<ProductSales> productSales);
+		void CalculateWeeklyDependecys(object sender, WeeklyDynamicCalcEventArgs eventArgs);
 	}
 }
