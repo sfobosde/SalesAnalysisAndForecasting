@@ -1,9 +1,14 @@
-﻿using System;
+﻿using DataBaseLayerLib.Entities.AAFS_Entities;
+using System.Collections.Generic;
 
 namespace CalculationLib.Interfaces
 {
 	public interface ICalculationModel
 	{
-		void CalculateWeeklyDependecys();
+		/// <summary>
+		/// Calculate weekly dynamics.
+		/// </summary>
+		/// <param name="productSales"></param>
+		void CalculateWeeklyDependecys(object sender, WeeklyDynamicCalcEventArgs eventArgs);
 	}
 }

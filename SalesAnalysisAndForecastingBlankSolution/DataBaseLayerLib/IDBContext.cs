@@ -19,5 +19,24 @@ namespace DataBaseLayerLib
 		/// </summary>
 		/// <returns></returns>
 		List<ProductSales> GetProductSales(string productId);
+
+		/// <summary>
+		/// Get weather data.
+		/// </summary>
+		/// <param name="productId"></param>
+		/// <returns></returns>
+		List<WeatherData> GetWeatherData();
+
+		/// <summary>
+		/// Get Policy changes.
+		/// </summary>
+		/// <returns></returns>
+		List<PolicyChanges> GetPolicyChanges();
+
+		/// <summary>
+		/// Get external factors.
+		/// </summary>
+		/// <returns></returns>
+		List<ExternalFactors> GetExternalFactors();
 	}
 }

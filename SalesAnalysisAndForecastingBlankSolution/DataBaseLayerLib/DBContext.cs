@@ -45,6 +45,42 @@ namespace DataBaseLayerLib
 				throw new Exception("No sales data", e);
 			}
 		}
+
+		/// <summary>
+		/// Get weather data.
+		/// </summary>
+		/// <returns></returns>
+		public override List<WeatherData> GetWeatherData()
+		{
+			var weatherData = from weatherDate in WeatherData
+							  select weatherDate;
+
+			return weatherData.ToList();
+		}
+
+		/// <summary>
+		/// Get Policy changes.
+		/// </summary>
+		/// <returns></returns>
+		public override List<PolicyChanges> GetPolicyChanges()
+		{
+			var policyChanges = from policyChange in PolicyChanges
+								select policyChange;
+
+			return policyChanges.ToList();
+		}
+
+		/// <summary>
+		/// Get external factors.
+		/// </summary>
+		/// <returns></returns>
+		public override List<ExternalFactors> GetExternalFactors()
+		{
+			var externalFactors = from externalFactor in ExternalFactors
+								  select externalFactor;
+
+			return externalFactors.ToList();
+		}
 		#endregion
 
 		#region Fields
