@@ -25,7 +25,7 @@ namespace DataBaseLayerLib.Entities.AAFS_Entities
 		/// Policy changes description.
 		/// </summary>
 		[Column]
-		public string changesDecription;
+		public string changesDescription;
 
 		/// <summary>
 		/// Uniqueidentifier of oriented product.

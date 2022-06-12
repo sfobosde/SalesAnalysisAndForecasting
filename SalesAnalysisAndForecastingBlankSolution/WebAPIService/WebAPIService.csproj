@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CalculationLib\CalculationLib.csproj" />
     <ProjectReference Include="..\DataBaseLayerLib\DataBaseLayerLib.csproj" />
     <ProjectReference Include="..\JWTAuthorizationLib\JWTAuthorizationLib.csproj" />
   </ItemGroup>

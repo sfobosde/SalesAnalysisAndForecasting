@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CalculationLib
 {
-	class CalculationModel : ICalculationModel
+	public class CalculationModel : ICalculationModel
 	{
 		public void CalculateWeeklyDependecys(object sender, WeeklyDynamicCalcEventArgs eventArgs)
 		{

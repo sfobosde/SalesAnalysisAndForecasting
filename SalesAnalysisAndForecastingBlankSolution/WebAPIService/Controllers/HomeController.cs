@@ -55,7 +55,7 @@ namespace WebAPIService.Controllers
 		/// Start calculate dependencys for product with id = productId.
 		/// </summary>
 		/// <param name="productId"></param>
-		public void CalculateDependencys(string productId)
+		public async void CalculateDependencys(string productId)
 		{
 			var productSales = _dbContext.GetProductSales(productId);
 			var weatherData = _dbContext.GetWeatherData();
@@ -71,7 +71,7 @@ namespace WebAPIService.Controllers
 				ExternalFactors = externalFactors
 			};
 
-			CalculatingDependencys?.Invoke(this, eventArgs);
+			CalculatingDependencys.Invoke(this, eventArgs);
 		}
 		#endregion
 
@@ -104,6 +104,7 @@ namespace WebAPIService.Controllers
 		{
 			_dbContext = dbContext;
 
+			_calculationModel = new CalculationModel();
 			CalculatingDependencys += _calculationModel.CalculateWeeklyDependecys;
 		}
 		#endregion
