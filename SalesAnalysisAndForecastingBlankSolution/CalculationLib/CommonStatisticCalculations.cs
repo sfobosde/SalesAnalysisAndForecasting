@@ -13,7 +13,7 @@ namespace CalculationLib
 		/// </summary>
 		protected double[] valuesArray;
 
-		// <summary>
+		/// <summary>
 		/// Mathematics expectation (AVG value);
 		/// </summary>
 		protected double mathExpectation => CalculateMathExpectation();
@@ -30,7 +30,7 @@ namespace CalculationLib
 		/// </summary>
 		protected double CalculateMathExpectation()
 		{
-			double valuesSum = 0;
+			var valuesSum = 0.0;
 
 			for (int valueIndex = 0;
 				valueIndex < valuesArray.Length;
@@ -47,7 +47,7 @@ namespace CalculationLib
 		/// </summary>
 		protected double CalculateVariance()
 		{
-			double devitation = 0;
+			var devitation = 0.0;
 
 			for (int valueIndex = 0;
 				valueIndex < valuesArray.Length;
